@@ -56,6 +56,14 @@ void inorder(node *root)
     }
 }
 
+void postorder(node *root){
+    if(root!=NULL){
+        postorder(root->left);
+        postorder(root->right);
+        printf("%d ",root->data);
+    }
+}
+
 int main()
 {
     char ch;
@@ -77,4 +85,7 @@ int main()
 
     printf("\nInorder Transversal\n");
     inorder(root);
+
+    printf("\nPostorder Transversal\n");
+    postorder(root);
 }
